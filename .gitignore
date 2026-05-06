@@ -1,0 +1,13 @@
+ml_project.egg-info/dependency_links.txt
+ml_project.egg-info/PKG-INFO
+ml_project.egg-info/SOURCES.txt
+ml_project.egg-info/top_level.txt
+.venv
+.venv/
+env
+env/
+__pycache__/
+*.pyc
+ml_project.egg-info/
+dist/
+build/
