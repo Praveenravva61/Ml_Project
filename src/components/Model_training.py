@@ -71,29 +71,58 @@ class ModelTrainer:
 
             models = {
 
-                "LinearRegression": LinearRegression(),
+                "Linear Regression": LinearRegression(),
 
                 "Lasso": Lasso(),
 
                 "Ridge": Ridge(),
 
-                "KNeighborsRegressor":
-                    KNeighborsRegressor(),
+                "KNeighborsRegressor": KNeighborsRegressor(),
 
-                "DecisionTree":
-                    DecisionTreeRegressor(),
+                "Decision Tree": DecisionTreeRegressor(),
 
-                "RandomForest":
-                    RandomForestRegressor(),
+                "Random Forest": RandomForestRegressor(),
 
-                "XGBoost":
-                    XGBRegressor(),
+                "XGBRegressor": XGBRegressor(),
 
-                "CatBoost":
-                    CatBoostRegressor(verbose=False),
+                "CatBoosting Regressor": CatBoostRegressor(verbose=False),
 
-                "AdaBoost":
-                    AdaBoostRegressor()
+                "AdaBoost Regressor": AdaBoostRegressor()
+            }
+
+            params = {
+
+                "Linear Regression": {},
+
+                "Lasso": {},
+
+                "Ridge": {},
+
+                "KNeighborsRegressor": {},
+
+                "Decision Tree": {
+                    'criterion': ['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                },
+
+                "Random Forest": {
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
+                },
+
+                "XGBRegressor": {
+                    'learning_rate': [.1, .01, .05, .001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
+                },
+
+                "CatBoosting Regressor": {
+                    'depth': [6, 8, 10],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'iterations': [30, 50, 100]
+                },
+
+                "AdaBoost Regressor": {
+                    'learning_rate': [.1, .01, 0.5, .001],
+                    'n_estimators': [8, 16, 32, 64, 128, 256]
+                }
             }
 
             model_report = evaluate_model(
@@ -101,7 +130,7 @@ class ModelTrainer:
                 y_train,
                 x_test,
                 y_test,
-                models
+                models, params
             )
 
             best_model_score = max(
