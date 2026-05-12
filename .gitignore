@@ -11,3 +11,5 @@ __pycache__/
 ml_project.egg-info/
 dist/
 build/
+.artifacts
+artifacts/
