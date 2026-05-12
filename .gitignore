@@ -13,3 +13,8 @@ dist/
 build/
 .artifacts
 artifacts/
+logs
+logs/
+Notebook/catboost_info/
+Notebook\catboost_info
+

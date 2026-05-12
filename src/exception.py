@@ -10,7 +10,7 @@ def error_message_details(error, error_detail: sys):
 
 
 class CustomException(Exception):   
-    def __init___(self, error_message, error_detail: sys):
+    def __init__(self, error_message, error_detail: sys):
         super().__init__(error_message)
         self.error_message = error_message_details(error_message, error_detail)
     def __str__(self):
