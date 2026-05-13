@@ -5,6 +5,8 @@ scikit-learn
 seaborn
 catboost
 xgboost 
+flask
+dill
 -e .
 
 

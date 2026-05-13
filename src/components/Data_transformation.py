@@ -26,8 +26,8 @@ class DataTransformation:
         
     def get_data_transformer_obj(self):
         try:
-            num_cols= ['reading score', 'writing score']
-            cat_cols= ['gender', 'race/ethnicity', 'parental level of education', 'lunch', 'test preparation course']
+            num_cols= ['reading_score', 'writing_score']
+            cat_cols= ['gender', 'race_ethnicity', 'parental_level_of_education', 'lunch', 'test_preparation_course']
             
             
             num_pipeline= Pipeline(
@@ -71,7 +71,7 @@ class DataTransformation:
             test= pd.read_csv(test_path)
             
             preprocess_obj= self.get_data_transformer_obj()
-            target= "math score"
+            target= "math_score"
             
             x_train= train.drop(columns= [target])
             y_train= train[target]
